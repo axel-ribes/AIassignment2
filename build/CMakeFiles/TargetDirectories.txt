@@ -1,0 +1,3 @@
+D:/AI/Assignment 2/build/CMakeFiles/facerec.dir
+D:/AI/Assignment 2/build/CMakeFiles/ALL_BUILD.dir
+D:/AI/Assignment 2/build/CMakeFiles/ZERO_CHECK.dir
