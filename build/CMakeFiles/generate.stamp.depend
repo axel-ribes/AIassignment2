@@ -86,11 +86,11 @@ C:/Program Files (x86)/CMake/share/cmake-3.15/Modules/Platform/Windows-MSVC-CXX.
 C:/Program Files (x86)/CMake/share/cmake-3.15/Modules/Platform/Windows-MSVC.cmake
 C:/Program Files (x86)/CMake/share/cmake-3.15/Modules/Platform/Windows.cmake
 C:/Program Files (x86)/CMake/share/cmake-3.15/Modules/Platform/WindowsPaths.cmake
-D:/AI/Assignment 2/CMakeLists.txt
-D:/AI/Assignment 2/build/CMakeFiles/3.15.3/CMakeCCompiler.cmake
-D:/AI/Assignment 2/build/CMakeFiles/3.15.3/CMakeCXXCompiler.cmake
-D:/AI/Assignment 2/build/CMakeFiles/3.15.3/CMakeRCCompiler.cmake
-D:/AI/Assignment 2/build/CMakeFiles/3.15.3/CMakeSystem.cmake
+D:/AI/Assignment2/CMakeLists.txt
+D:/AI/Assignment2/build/CMakeFiles/3.15.3/CMakeCCompiler.cmake
+D:/AI/Assignment2/build/CMakeFiles/3.15.3/CMakeCXXCompiler.cmake
+D:/AI/Assignment2/build/CMakeFiles/3.15.3/CMakeRCCompiler.cmake
+D:/AI/Assignment2/build/CMakeFiles/3.15.3/CMakeSystem.cmake
 D:/AI/vcpkg-export-20200114-082720/vcpkg-export-20200114-082720/installed/x64-windows/share/opencv/OpenCVConfig-version.cmake
 D:/AI/vcpkg-export-20200114-082720/vcpkg-export-20200114-082720/installed/x64-windows/share/opencv/OpenCVConfig.cmake
 D:/AI/vcpkg-export-20200114-082720/vcpkg-export-20200114-082720/installed/x64-windows/share/opencv/OpenCVModules-debug.cmake
