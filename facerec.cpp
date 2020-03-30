@@ -28,19 +28,43 @@ int main(int argc, char *argv[])
     }
   }
 
-  // Randomly choose an image, and remove it from the main collection
-  std::srand(std::time(0));
-  int rand_image_id = std::rand() % images.size();
-  cv::Mat testSample = images[rand_image_id];
-  int     testLabel  = labels[rand_image_id];
-  images.erase(images.begin() + rand_image_id);
-  labels.erase(labels.begin() + rand_image_id);
-  std::cout << "Actual class    = " << testLabel << '\n';
   std::cout << " training...";
-
   cv::Ptr<cv::face::BasicFaceRecognizer> model = cv::face::EigenFaceRecognizer::create();
-  model->train(images, labels);
-  int predictedLabel = model->predict(testSample);
-  std::cout << "\nPredicted class = " << predictedLabel << '\n';
+  model->train(images, labels);  //
+
+  //code used in opencv lab for live video
+  cv::Mat frame;
+  double fps = 30;
+  const char win_name[] = "Who's there ? Face Recognition";
+
+  cv::VideoCapture vid_in(0);   // argument is the camera id
+  if (!vid_in.isOpened()) {
+      std::cout << "error: Camera 0 could not be opened for capture.\n";
+      return -1;
+  }
+  cv::namedWindow(win_name);
+
+  cv::Rect cropRectangle(200, 110, 200, 250);
+  cv::Mat resized;
+
+  while (1) {
+      vid_in >> frame;
+      //program has been trained, live video is ON, now we have to put the frame at the good format 92*112 8bit pgm
+      frame = frame(cropRectangle); //cropping the image to allow face recognition 
+    
+      imshow(win_name, frame); //displaying image
+
+      cv::resize(frame, resized, cv::Size(92, 112)); //resizing after showing the frame to match
+      cv::cvtColor(resized, resized, CV_BGR2GRAY); //changing to grayscale
+
+      //both lines from opencv lab
+      int predictedLabel = model->predict(resized); //predicting
+      std::cout << "\nPredicted class = " << predictedLabel << '\n'; //which class has been predicted (should be 41 for me)
+
+      if (cv::waitKeyEx(1000 / fps) >= 0) // how long to wait for a key (milliseconds)
+          break;
+  }
+
+  vid_in.release(); //updating the video onthe screen;
   return 0;
 }
