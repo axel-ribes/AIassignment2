@@ -44,8 +44,8 @@ int main(int argc, char *argv[])
   }
   cv::namedWindow(win_name);
 
-  cv::Rect cropRectangle(200, 110, 200, 250);
-  cv::Mat resized;
+  cv::Rect cropRectangle(200, 110, 200, 250); //this rectangle sets the position and the size of the part of the image that we wants
+  cv::Mat resized; //container for the frame that will be changed
 
   while (1) {
       vid_in >> frame;
